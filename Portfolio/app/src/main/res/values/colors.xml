@@ -3,5 +3,6 @@
     <color name="colorPrimary">#9e9e9e</color>
     <color name="colorPrimaryDark">#313447</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="backgrooundColoBtn">#eb4c7c</color>
+    <color name="bkgLastBtn">#eb4c7c</color>
+    <color name="bkgColoBtn">#F08C35</color>
 </resources>
