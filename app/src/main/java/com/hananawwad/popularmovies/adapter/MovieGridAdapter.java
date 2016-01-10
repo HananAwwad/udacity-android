@@ -47,6 +47,7 @@ public class MovieGridAdapter extends RecyclerView.Adapter<MovieGridAdapter.View
         this.mainFragmentCallback = mainFragmentCallback;
 
     }
+
     public void addMovies(List<MovieModel> data) {
         Log.d(TAG, "Adding movies to the adapter.");
         if (data == null) {
@@ -80,13 +81,14 @@ public class MovieGridAdapter extends RecyclerView.Adapter<MovieGridAdapter.View
                 movieData.title));
 
         if (movieData != null) {
-            calendar.setTime(movieData.getFormattedDate());
+            if (movieData.getFormattedDate() != null)
+                calendar.setTime(movieData.getFormattedDate());
             holder.releaseDateTextView.setText(String.valueOf(calendar.get(Calendar.YEAR)));
             holder.releaseDateTextView.setContentDescription(holder.releaseDateTextView.getContext().getString(
                     R.string.a11y_movie_year, String.valueOf(calendar.get(Calendar.YEAR))));
         }
 
-        String imageUrl = Constants.IMAGE_MOVIE_URL + Constants.IMAGE_SIZE_W185 +movieData.posterPath;
+        String imageUrl = Constants.IMAGE_MOVIE_URL + Constants.IMAGE_SIZE_W185 + movieData.posterPath;
         final RelativeLayout container = holder.titleLayout;
 
         Picasso.with(holder.posterImageView.getContext()).load(imageUrl).placeholder(R.drawable.ic_movie_placeholder).
