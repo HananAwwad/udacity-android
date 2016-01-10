@@ -39,6 +39,16 @@
             app:layout_collapseMode="parallax"
             android:layout_gravity="left|bottom" />
 
+
+        <ImageView
+            android:id="@+id/movie_detail_play_trailer_image_view"
+            android:layout_width="@dimen/play_icon_size"
+            android:layout_height="@dimen/play_icon_size"
+            android:layout_gravity="center"
+            android:elevation="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_play_circle_fill" />
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
