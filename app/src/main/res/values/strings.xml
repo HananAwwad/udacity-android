@@ -11,5 +11,14 @@
     <string name="no_internet_connection">No internet connection</string>
     <string name="movies_data_loaded">The movies are loaded successfully</string>
     <string name="Synopsis">Synopsis</string>
+    <string name="trailer">Trailer</string>
+    <string name="reviews">Reviews</string>
+    <string name="no_reviews">No reviews</string>
+    <string name="no_trailers">No trailers</string>
     <string name="no_movie_selected">No movie selected</string>
+    <string name="movie_detail_add_favorite">Add to favorite</string>
+    <string name="show_favorites" >Show favorites</string>
+    <string name="added_to_favorite">Added to favorite</string>
+    <string name="removed_from_favorite">Removed from favorite</string>
+    <string name="share">Share</string>
 </resources>
