@@ -23,8 +23,9 @@ import android.widget.LinearLayout;
 import com.hananawwad.popularmovies.R;
 import com.hananawwad.popularmovies.activity.MainActivity;
 import com.hananawwad.popularmovies.adapter.MovieGridAdapter;
+import com.hananawwad.popularmovies.loaders.FavoritesLoader;
 import com.hananawwad.popularmovies.model.MovieModel;
-import com.hananawwad.popularmovies.task.MoviesLoader;
+import com.hananawwad.popularmovies.loaders.MoviesLoader;
 import com.hananawwad.popularmovies.util.Constants;
 import com.hananawwad.popularmovies.util.DeviceUtil;
 import com.hananawwad.popularmovies.util.PreferenceUtil;
@@ -104,6 +105,10 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 sortType = Constants.SORT_BY_RATING_DESC;
                 result = true;
                 break;
+            case R.id.show_favorites:
+                sortType = Constants.SHOW_FAVORITES;
+                result = true;
+                break;
             default:
                 sortType = Constants.SORT_BY_POPULARITY_DESC;
                 result = super.onOptionsItemSelected(item);
@@ -123,8 +128,9 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         Log.d(TAG, "Calling on create view on main fragment");
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, view);
+        int gridColumns = getResources().getInteger(R.integer.grid_columns);
         refreshLayout.setColorSchemeResources(R.color.colorPrimaryDark);
-        final GridLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
+        final GridLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), gridColumns);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setHasFixedSize(true);
         int colorPrimaryLight = ContextCompat.getColor(getActivity(), (R.color.colorPrimaryTransparent));
@@ -148,7 +154,8 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
     @Override
     public Loader<List<MovieModel>> onCreateLoader(int id, Bundle args) {
-        return new MoviesLoader(getActivity());
+        return PreferenceUtil.getPrefs(getActivity(),Constants.MODE_VIEW,Constants.SORT_BY_POPULARITY_DESC).equals(Constants.SHOW_FAVORITES)?
+                new FavoritesLoader(getActivity()): new MoviesLoader(getActivity());
     }
 
     @Override
