@@ -98,6 +98,100 @@
 
         </android.support.v7.widget.CardView>
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/detail_movie_trailers_card_view"
+            style="@style/MovieDetailContainer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/MovieDetailContainerTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trailer" />
+
+
+                <include layout="@layout/divider" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/movie_detail_trailer_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <ProgressBar
+                            android:id="@+id/movie_detail_trailer_progress_bar"
+                            style="?android:attr/progressBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/empty_trailer_list"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/text_padding_8dp"
+                            android:text="@string/no_trailers"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/detail_movie_reviews_card_view"
+            style="@style/MovieDetailContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/detail_movie_reviews_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/MovieDetailContainerTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reviews" />
+
+                <include layout="@layout/divider" />
+
+                <ProgressBar
+                    android:id="@+id/movie_detail_review_progress_bar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/text_padding_16dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/empty_review_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/text_padding_16dp"
+                    android:paddingLeft="@dimen/text_padding_8dp"
+                    android:paddingTop="@dimen/text_padding_16dp"
+                    android:text="@string/no_reviews"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 
