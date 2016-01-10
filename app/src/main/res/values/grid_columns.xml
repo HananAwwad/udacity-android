@@ -1,0 +1,4 @@
+<resources>
+    <integer name="grid_columns">2</integer>
+    <integer name="duration">600</integer>
+</resources>
