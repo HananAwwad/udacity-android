@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+    <TextView
+        style="@style/ReviewTitle"
+        android:id="@+id/list_item_review_author_text_view"
+        tools:text="Frank Ochieng" />
+
+    <TextView
+        style="@style/ReviewContent"
+        android:id="@+id/list_item_review_content_text_view"
+        tools:text="So where were you when the Science Fiction cinema sensation ‘Star Wars’ took shape and captured the imagination of the massive global moviegoers’ escapist expectations back in 1977? Regardless of whether you existed thirty-eight years ago or not, the legend of George Lucas’ highly-heralded SF blockbuster that shattered box office records worldwide was automatically engrained in your cinematic psyche" />
+
+</LinearLayout>
