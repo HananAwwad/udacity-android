@@ -160,7 +160,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
     @Override
     public void onLoadFinished(Loader<List<MovieModel>> loader, List<MovieModel> data) {
-        Log.d(TAG, "Finish loading the movies data with" + data.size() + " movies.");
+        Log.d(TAG, "Finish loading the movies data with movies.");
         refreshLayout.setRefreshing(false);
         movieModels = (ArrayList<MovieModel>) data;
         movieGridAdapter.addMovies(data);
